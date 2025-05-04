@@ -2,6 +2,7 @@ import argparse
 import os
 import shutil
 from pathlib import Path
+from datetime import datetime
 
 # setup argument parser
 
@@ -11,7 +12,9 @@ parser = argparse.ArgumentParser(description ='Organize files in a folder by fil
 
 parser.add_argument('folder',help='Path to the folder to organise')
 parser.add_argument('--dry_run', action= 'store_true',help= "only show what will be moved, don't actually move files ")
-
+parser.add_argument('--recursive',action='store_true',help='Recursively organise files in subdirectories')
+parser.add_argument('--extensions', nargs='+', help="Only include files with these extensions (e.g. .jpg .pdf)")
+parser.add_argument('--logfile', help='Log file to write actions to (e.g. organize.log)')
 
 # parse the arguments
 
@@ -39,14 +42,39 @@ if not folder_path.exists() or not folder_path.is_dir():
     exit(1)
 
 
+
+# logging function
+
+def log(message):
+    print(message)
+    if args.logfile:
+        
+        # check if the log file exists, if not create it and write the header
+        with open(args.logfile, 'a', encoding='utf-8') as f:
+            f.write(f'{datetime.now()} | {message}\n')
+
+
+#scan files
+
+file_paths = folder_path.rglob('*') if args.recursive else folder_path.iterdir()
+
 # organise logic
+
+moved_count = 0
+skipped_count = 0
+preview_count = 0
 
 
 #selecting a file in the folder
-for file in folder_path.iterdir():
+for file in file_paths:
     
     #checking that if its a file or not
     if file.is_file():
+        #skipping the file if it is not in the specified extensions
+        if args.extensions and file.suffix.lower() not in [ext.lower() for ext in args.extensions]:
+            skipped_count += 1
+            log(f'Skipped {file.name} (not in specified extensions)')
+            continue
         
         moved = False
         
@@ -64,12 +92,15 @@ for file in folder_path.iterdir():
                 
                 # if dry run is true, show the move action
                 if args.dry_run:
-                    print(f'[DRY RUN] Would move {file.name} -> {target_dir}')
+                    log(f'[DRY RUN] Would move {file.name} -> {target_dir}')
+                    preview_count += 1
                 
                 # else move the file
                 else:
                     shutil.move(str(file), str(target_dir / file.name))
-                    print(f'Moved {file.name} -> {target_dir}')
+                    log(f'Moved {file.name} -> {target_dir}')
+                    moved_count += 1
+                    
                 moved = True
                 break
         
@@ -83,10 +114,22 @@ for file in folder_path.iterdir():
             other_dir.mkdir(exist_ok=True)
             
             if args.dry_run:
-                print(f'[DRY RUN] Would move {file.name} -> {other_dir}')
+                log(f'[DRY RUN] Would move {file.name} -> {other_dir}')
+                preview_count += 1
             else:
                 shutil.move(str(file), str(other_dir / file.name))
-                print(f'Moved {file.name} -> {other_dir}')
+                log(f'Moved {file.name} -> {other_dir}')
+                moved_count += 1
+                
+
+
+#summary report
+
+log(f'\n----[SUMMARY]----')
+log(f'Total files moved: {moved_count}')
+log(f'Total files skipped: {skipped_count}')
+log(f'Total files previewed: {preview_count}')
+
 
 
 

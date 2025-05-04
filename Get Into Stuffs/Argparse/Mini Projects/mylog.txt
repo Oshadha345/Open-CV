@@ -1,0 +1,32 @@
+2025-05-03 22:34:28.750726 | Moved 01 - Mark My Words.mp3 -> M:\Org\Audio
+2025-05-03 22:34:28.750726 | Moved 01 - Night Changes.mp3 -> M:\Org\Audio
+2025-05-03 22:34:28.750726 | Moved 01 6.18.18.mp3 -> M:\Org\Audio
+2025-05-03 22:34:28.761579 | Moved 01 Anxiety (Intro).mp3 -> M:\Org\Audio
+2025-05-03 22:34:28.783877 | Moved 6051823_17367-scaled.jpg -> M:\Org\Images
+2025-05-03 22:34:28.786465 | Moved 848485 - Copy.jpg -> M:\Org\Images
+2025-05-03 22:34:28.789489 | Moved 895636 - Copy.jpg -> M:\Org\Images
+2025-05-03 22:34:28.791891 | Moved 909618.jpg -> M:\Org\Images
+2025-05-03 22:34:28.797066 | Moved DEEE-Logo-with-WHITE-text-.png -> M:\Org\Images
+2025-05-03 22:34:28.803397 | Moved DEEE-Logo.png -> M:\Org\Images
+2025-05-03 22:34:28.805863 | Moved EEES-Logo-white.png -> M:\Org\Images
+2025-05-03 22:34:28.807862 | Moved 01 - Mark My Words.mp3 -> M:\Org\Audio
+2025-05-03 22:34:28.813969 | Moved 01 - Night Changes.mp3 -> M:\Org\Audio
+2025-05-03 22:34:28.815401 | Moved 01 6.18.18.mp3 -> M:\Org\Audio
+2025-05-03 22:34:28.818332 | Moved 01 Anxiety (Intro).mp3 -> M:\Org\Audio
+2025-05-03 22:34:28.818332 | Moved E22-Electrolizer.xlsx -> M:\Org\Documents
+2025-05-03 22:34:28.825342 | Moved IEEE Xtreme Preparation Plan.pdf -> M:\Org\Documents
+2025-05-03 22:34:28.830424 | Moved Personal BSc.pdf -> M:\Org\Documents
+2025-05-03 22:34:28.834718 | Moved SEM 3 Plan.pdf -> M:\Org\Documents
+2025-05-03 22:34:28.839512 | Moved 6051823_17367-scaled.jpg -> M:\Org\Images
+2025-05-03 22:34:28.841826 | Moved 848485 - Copy.jpg -> M:\Org\Images
+2025-05-03 22:34:28.845567 | Moved 895636 - Copy.jpg -> M:\Org\Images
+2025-05-03 22:34:28.850069 | Moved 909618.jpg -> M:\Org\Images
+2025-05-03 22:34:28.852092 | Moved DEEE-Logo-with-WHITE-text-.png -> M:\Org\Images
+2025-05-03 22:34:28.852092 | Moved DEEE-Logo.png -> M:\Org\Images
+2025-05-03 22:34:28.859843 | Moved EEES-Logo-white.png -> M:\Org\Images
+2025-05-03 22:34:28.864881 | Moved 03 Ebenezer Sprague - fiveofseven.mp4 -> M:\Org\Videos
+2025-05-03 22:34:28.868962 | 
+----[SUMMARY]----
+2025-05-03 22:34:28.871320 | Total files moved: 27
+2025-05-03 22:34:28.872349 | Total files skipped: 0
+2025-05-03 22:34:28.873342 | Total files previewed: 0
